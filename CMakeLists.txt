@@ -6,6 +6,8 @@ project(RgbLedDriver C CXX ASM)
 set(CMAKE_C_STANDARD 11)
 set(CMAKE_CXX_STANDARD 17)
 
+set(PICO_CXX_ENABLE_EXCEPTIONS 1)
+
 pico_sdk_init()
 
 add_compile_options(-Wall
@@ -15,7 +17,7 @@ add_compile_options(-Wall
         )
 
 add_executable(RgbLedDriver
-    RgbLedDriver.c
+    RgbLedDriver.cpp
 )
 
 target_link_libraries(RgbLedDriver
